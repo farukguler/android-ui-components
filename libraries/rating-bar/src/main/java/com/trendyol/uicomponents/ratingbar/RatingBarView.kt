@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.util.AttributeSet
 import android.widget.LinearLayout
 import androidx.annotation.ColorInt
+import androidx.annotation.DrawableRes
 import com.trendyol.uicomponents.ratingbar.databinding.ViewRatingBarBinding
 
 class RatingBarView @JvmOverloads constructor(
@@ -16,6 +17,8 @@ class RatingBarView @JvmOverloads constructor(
     private var starHighlightColor: Int = Color.YELLOW
     @ColorInt
     private var starDefaultColor: Int = Color.GRAY
+    @DrawableRes
+    private var starDrawable: Int = R.drawable.ic_star
 
     private val binding: ViewRatingBarBinding = inflate(R.layout.view_rating_bar)
 
@@ -27,18 +30,19 @@ class RatingBarView @JvmOverloads constructor(
             0
         )?.apply {
             try {
-                starCount = getInteger(R.styleable.RatingBarView_starCount, 0)
+                starCount = getInteger(R.styleable.RatingBarView_starCount, starCount)
                 starHighlightColor =
                     getColor(
                         R.styleable.RatingBarView_starHighlightColor,
-                        context.color(R.color.star_highlight)
+                        starHighlightColor
                     )
                 starDefaultColor = getColor(
                     R.styleable.RatingBarView_starDefaultColor,
-                    context.color(R.color.star_default)
+                    starDefaultColor
                 )
+                starDrawable = getResourceId(R.styleable.RatingBarView_starDrawable, starDrawable)
 
-                setViewState(createViewState())
+                updateViewState()
             } finally {
                 recycle()
             }
@@ -53,7 +57,7 @@ class RatingBarView @JvmOverloads constructor(
      */
     fun setStarCount(starCount: Int) {
         this.starCount = starCount
-        setViewState(createViewState())
+        updateViewState()
     }
 
     /**
@@ -63,28 +67,40 @@ class RatingBarView @JvmOverloads constructor(
      */
     fun setHighlightColor(@ColorInt color: Int) {
         this.starHighlightColor = color
-        setViewState(createViewState())
+        updateViewState()
     }
 
     /**
      *
-     * Sets star default color. Stars that will not be selected will get this color.
+     * Sets star default color. Stars that will not be highlighted, get this color.
      *
      * @param color: Color for star.
      */
     fun setDefaultStarColor(@ColorInt color: Int) {
         this.starDefaultColor = color
-        setViewState(createViewState())
+        updateViewState()
+    }
+
+    /**
+     *
+     * Sets custom star drawable.
+     *
+     * @param drawableResId: Id of an drawable.
+     */
+    fun setStarDrawable(@DrawableRes drawableResId: Int) {
+        this.starDrawable = drawableResId
+        updateViewState()
     }
 
     private fun createViewState(): RatingBarViewState = RatingBarViewState(
         starCount = starCount,
         starDefaultColor = starDefaultColor,
-        starHighlightColor = starHighlightColor
+        starHighlightColor = starHighlightColor,
+        starDrawable = starDrawable
     )
 
-    private fun setViewState(viewState: RatingBarViewState?) {
-        binding.viewState = viewState
+    private fun updateViewState() {
+        binding.viewState = createViewState()
         binding.executePendingBindings()
     }
 }

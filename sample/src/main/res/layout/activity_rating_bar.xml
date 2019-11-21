@@ -8,20 +8,20 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0 Star" />
+        android:text="0 Star (match_parent, default)"
+        android:textSize="20sp" />
 
     <com.trendyol.uicomponents.ratingbar.RatingBarView
         android:id="@+id/ratingBarView0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:starCount="0"
-        app:starDefaultColor="@android:color/holo_blue_light"
-        app:starHighlightColor="@android:color/holo_orange_light" />
+        app:starCount="0" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1 Star" />
+        android:text="1 Star (match_parent, custom colors)"
+        android:textSize="20sp" />
 
     <com.trendyol.uicomponents.ratingbar.RatingBarView
         android:layout_width="match_parent"
@@ -33,19 +33,22 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2 Stars" />
+        android:text="2 Stars (200dp, custom colors, custom drawable)"
+        android:textSize="20sp" />
 
     <com.trendyol.uicomponents.ratingbar.RatingBarView
-        android:layout_width="120dp"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         app:starCount="2"
         app:starDefaultColor="@android:color/holo_blue_light"
+        app:starDrawable="@android:drawable/ic_delete"
         app:starHighlightColor="@android:color/holo_orange_light" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3 Stars" />
+        android:text="3 Stars (wrap_content, custom colors)"
+        android:textSize="20sp" />
 
     <com.trendyol.uicomponents.ratingbar.RatingBarView
         android:layout_width="wrap_content"
@@ -57,24 +60,27 @@
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="4 Stars" />
+        android:text="4 Stars (150dp, custom_colors)"
+        android:textSize="20sp" />
 
     <com.trendyol.uicomponents.ratingbar.RatingBarView
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         app:starCount="4"
-        app:starDefaultColor="@android:color/holo_blue_light"
-        app:starHighlightColor="@android:color/holo_orange_light" />
+        app:starDefaultColor="@android:color/holo_green_light"
+        app:starHighlightColor="@android:color/holo_green_dark" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="5 Stars" />
+        android:text="5 Stars  (wrap_content, custom_colors, custom drawable)"
+        android:textSize="20sp" />
 
     <com.trendyol.uicomponents.ratingbar.RatingBarView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:starCount="5"
-        app:starDefaultColor="@android:color/holo_blue_light"
-        app:starHighlightColor="@android:color/holo_orange_light" />
+        app:starDefaultColor="@android:color/holo_red_light"
+        app:starDrawable="@android:drawable/ic_menu_add"
+        app:starHighlightColor="@android:color/holo_red_dark" />
 </LinearLayout>

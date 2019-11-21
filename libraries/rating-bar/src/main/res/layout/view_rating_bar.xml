@@ -23,7 +23,7 @@
             android:layout_marginEnd="@dimen/margin_stars"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            app:srcCompat="@drawable/ic_star"
+            app:starDrawable="@{viewState.starDrawable}"
             app:tintCompat="@{viewState.tint1}" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -33,7 +33,7 @@
             android:layout_marginEnd="@dimen/margin_stars"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            app:srcCompat="@drawable/ic_star"
+            app:starDrawable="@{viewState.starDrawable}"
             app:tintCompat="@{viewState.tint2}" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -43,7 +43,7 @@
             android:layout_marginEnd="@dimen/margin_stars"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            app:srcCompat="@drawable/ic_star"
+            app:starDrawable="@{viewState.starDrawable}"
             app:tintCompat="@{viewState.tint3}" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -53,7 +53,7 @@
             android:layout_marginEnd="@dimen/margin_stars"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            app:srcCompat="@drawable/ic_star"
+            app:starDrawable="@{viewState.starDrawable}"
             app:tintCompat="@{viewState.tint4}" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -62,7 +62,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:adjustViewBounds="true"
-            app:srcCompat="@drawable/ic_star"
+            app:starDrawable="@{viewState.starDrawable}"
             app:tintCompat="@{viewState.tint5}" />
     </merge>
 </layout>

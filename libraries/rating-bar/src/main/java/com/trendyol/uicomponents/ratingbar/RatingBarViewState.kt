@@ -1,11 +1,13 @@
 package com.trendyol.uicomponents.ratingbar
 
 import androidx.annotation.ColorInt
+import androidx.annotation.DrawableRes
 
 data class RatingBarViewState(
     private val starCount: Int,
     @ColorInt private val starHighlightColor: Int,
-    @ColorInt private val starDefaultColor: Int
+    @ColorInt private val starDefaultColor: Int,
+    @DrawableRes private val starDrawable: Int
 ) {
 
     fun getTint1(): Int = if (1 <= starCount) starHighlightColor else starDefaultColor
@@ -17,4 +19,7 @@ data class RatingBarViewState(
     fun getTint4(): Int = if (4 <= starCount) starHighlightColor else starDefaultColor
 
     fun getTint5(): Int = if (5 <= starCount) starHighlightColor else starDefaultColor
+
+    @DrawableRes
+    fun getStarDrawable(): Int = starDrawable
 }
